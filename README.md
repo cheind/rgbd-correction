@@ -4,9 +4,11 @@ This repository contains code and data accompanying our work on spatio-thermal d
 
 ![](etc/correction_t17_p1200.png)
 
-## Dataset
+## Capture setup
 
 Our capture setup consists of an RGB-D sensor looking towards a known planar object. The sensor is coupled with an electronic linear axis to adjust distance. We captured data at distances [40cm, 90cm, 10cm steps] in the temperate range of [25°C, 35°C, 1°C steps]. At each temperature/distance tuple 50 images from both sensors RGB and IR (aligned with RGB) were taken. We create an artificial depth map from all RGB images utilizing the known calibration target in sight.
+
+## Dataset
 
 We provide two versions of our dataset
 - [rgbd-correction-mini.zip](https://s3.eu-central-1.amazonaws.com/rgbd-correction/rgbd-correction-mini.zip) ~80 MBytes | Contains only pre-processed mean depth images as described in our paper.
