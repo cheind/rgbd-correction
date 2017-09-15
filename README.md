@@ -2,6 +2,8 @@
 
 This repository contains code and data accompanying our work on spatio-thermal depth correction of RGB-D sensors based on Gaussian Processes in real-time.
 
+![](etc/correction_t17_p1200.png)
+
 ## Dataset
 
 Our capture setup consists of an RGB-D sensor looking towards a known planar object. The sensor is coupled with an electronic linear axis to adjust distance. We captured data at distances [40cm, 90cm, 10cm steps] in the temperate range of [25°C, 35°C, 1°C steps]. At each temperature/distance tuple 50 images from both sensors RGB and IR (aligned with RGB) were taken. We create an artificial depth map from all RGB images utilizing the known calibration target in sight.
