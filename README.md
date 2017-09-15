@@ -12,7 +12,7 @@ Our capture setup consists of an RGB-D sensor looking towards a known planar obj
 
 We provide two versions of our dataset
 - [rgbd-correction-mini.zip](https://s3.eu-central-1.amazonaws.com/rgbd-correction/rgbd-correction-mini.zip) ~80 MBytes | Contains mostly pre-processed mean depth images as described in our paper.
-- [rgbd-correction-raw.zip](https://s3.eu-central-1.amazonaws.com/rgbd-correction/rgbd-correction-raw.zip) ~6 GBytes | Contains entire raw capture data, plus artificial depth maps.
+- [rgbd-correction-raw.zip](https://s3.eu-central-1.amazonaws.com/rgbd-correction/rgbd-correction-raw.zip) ~6 GBytes | Contains the entire raw capture data, plus artificial depth maps.
 
 Depending on your needs, you might choose one over the other. As a rule of thumb use `rgbd-correction-mini.zip` if you like to reproduce our results or try out minor code modifications. Otherwise go with `rgbd-correction-raw.zip`.
 
