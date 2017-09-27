@@ -98,7 +98,7 @@ The code performing our regression will be uploaded in the coming days.
 ## Acknowledgements
 This research is funded by the projects Lern4MRK (Austrian Ministry for Transport, Innovation and Technology), and AssistMe (FFG, 848653), as well as the European Union in cooperation with the State of Upper Austria within the project Investition in Wachstum und Besch\"aftigung (IWB).
 
-Code and dataset created by members of [PROFACTOR Gmbh](http://www.profactor.at)
+Code and dataset created by members of [PROFACTOR Gmbh](http://www.profactor.at).
 
 
 
