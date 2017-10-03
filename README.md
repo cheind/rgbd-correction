@@ -101,7 +101,7 @@ This research is funded by the projects Lern4MRK (Austrian Ministry for Transpor
 Code and dataset created by members of [PROFACTOR Gmbh](http://www.profactor.at).
 
 ## Cite us
-If you want to cite our work or this database use the following
+If you use our dataset / code in your research and would like to cite us, we suggest the following BibTeX format.
 
 ```
 @InProceedings{,
