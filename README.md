@@ -100,5 +100,16 @@ This research is funded by the projects Lern4MRK (Austrian Ministry for Transpor
 
 Code and dataset created by members of [PROFACTOR Gmbh](http://www.profactor.at).
 
+## Cite us
+If you want to cite our work or this database use the following
 
+```
+@InProceedings{,
+ author    = {Heindl,Christoph and Poenitz, Thomas and Stuebl,Gernot and Pichler, Andreas and Scharinger, Josef},
+ title     = {Spatio-thermal depth correction of {RGB-D} sensors based on {G}aussian {P}rocesses in real-time},
+ booktitle = {The 10th International Conference on Machine Vision, to be published},
+ year      = {2017},
+ note      = {to be published},
+}
+```
 
