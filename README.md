@@ -93,10 +93,80 @@ for t, group in groups:
 Then use your favorite libraries to process the images.
 
 ## Code
-The code performing our regression will be uploaded in the coming days.
+
+The code contains the necessary tools to train and predict pixel-wise dense depth corrections. The CPU part contains two separate implementations, one based on `sklearn` and a minimal standalone regressor that depends on `numpy`. The GPU implementation is based on [TensorFlow](https://www.tensorflow.org/).
+
+### Preprocessing data
+
+If you are working with `rgbd-correction-raw.zip` you will first need to preprocess
+the data by 
+
+```
+python -m sensor_correction.apps.preprocess_depth --crop 20 --unitscale 0.001 <path-to-index.csv>
+
+Processing temperature 10
+  Processing position 700
+  Processing position 800
+  Processing position 900
+  Processing position 1000
+  Processing position 1100
+  Processing position 1200
+Processing temperature 11
+  Processing position 700
+  Processing position 800
+  Processing position 900
+...
+```
+
+This will result in a file named `input_depths.npz` that will be used next. In case you are working with `rgbd-correction-mini.zip` you can skip this step.
+
+### Fitting a Gaussian Process regressor
+
+To train a GP regressor on preprocessed input data, type
+
+```
+python -m sensor_correction.apps.train input_depths.npz <path-to-intrinsics.txt>
+RMSE 1.405188e-02
+
+Optimized length scale [  2.41625833  55.406589     0.36033164  99.50966992]
+Optimized signal std 0.5018155580645485
+Optimized noise std 0.0316227766016838
+```
+
+The script automatically selects training data from all test data and optimizes the kernel hyper-parameters. This could take a while, be patient. Once completed a `gpr.pkl` should be generated.
+
+### Correcting depth maps
+
+To correct depth maps on CPU use
+
+```
+python -m sensor_correction.apps.correct_depth gpr.pkl input_depths.npz  <path-to-intrinsics.txt>
+```
+
+or for GPU accelerated computations, type
+
+```
+python -m sensor_correction.apps.correct_depth gpr.pkl input_depths.npz  <path-to-intrinsics.txt> --gpu
+```
+
+Depending on your GPU model you should be able to see a significant speed-up compared to the CPU variant. Please note that the released GPU code does not contain the final optimized instruction set and thus might run a bit slower. 
+
+Once completed you should see a `corrected_depths.npz` file.
+
+### Plotting results
+
+To plot correction results, use 
+
+```
+python -m sensor_correction.apps.plot_corrected_depth input_depths.npz corrected_depths.npz
+```
+
+which should give results similar to
+
+![](etc/correction_t17_p1200.png)
 
 ## Acknowledgements
-This research is funded by the projects Lern4MRK (Austrian Ministry for Transport, Innovation and Technology), and AssistMe (FFG, 848653), as well as the European Union in cooperation with the State of Upper Austria within the project Investition in Wachstum und Besch\"aftigung (IWB).
+This research is funded by the projects Lern4MRK (Austrian Ministry for Transport, Innovation and Technology), and AssistMe (FFG, 848653), as well as the European Union in cooperation with the State of Upper Austria within the project Investition in Wachstum und Beschäftigung (IWB).
 
 Code and dataset created by members of [PROFACTOR Gmbh](http://www.profactor.at).
 
