@@ -6,7 +6,7 @@ This repository contains code and data accompanying our work on spatio-thermal d
 
 ## Documentation
 
-We provide presentation slides from the ICMV 2017 event
+We provide presentation slides of the ICMV 2017 conference event
  - [PDF Slides 16:9](etc/rgbd-correction-slides-169.pdf)
  - [PDF Slides 4:3](etc/rgbd-correction-slides-43.pdf)
 
