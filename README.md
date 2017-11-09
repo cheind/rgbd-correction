@@ -4,6 +4,12 @@ This repository contains code and data accompanying our work on spatio-thermal d
 
 ![](etc/correction_t17_p1200.png)
 
+## Documentation
+
+We provide presentation slides from the ICMV 2017 event
+ - [PDF Slides 16:9](etc/rgbd-correction-slides-169.pdf)
+ - [PDF Slides 4:3](etc/rgbd-correction-slides-43.pdf)
+
 ## Capture setup
 
 Our capture setup consists of a RGB-D sensor looking towards a known planar object. The sensor is coupled with an electronic linear axis to adjust distance. We captured data at distances [40cm, 90cm, 10cm steps] in the temperate range of [25°C, 35°C, 1°C steps]. At each temperature/distance tuple we grabbed 50 images from both RGB and IR (aligned with RGB) sensors. We then created an artificial depth map for all RGB images utilizing the known calibration target in sight.
