@@ -20,10 +20,12 @@ Our capture setup consists of a RGB-D sensor looking towards a known planar obje
 ## Dataset
 
 We provide two versions of our dataset
-- [rgbd-correction-mini.zip](https://s3.eu-central-1.amazonaws.com/rgbd-correction/rgbd-correction-mini.zip) ~80 MBytes | Contains mostly pre-processed mean depth images as described in our paper.
-- [rgbd-correction-raw.zip](https://s3.eu-central-1.amazonaws.com/rgbd-correction/rgbd-correction-raw.zip) ~6 GBytes | Contains the entire raw capture data, plus artificial depth maps.
+- [rgbd-correction-mini.zip](https://zenodo.org/record/6827435/files/rgbd-correction-mini.zip?download=1) ~80 MBytes | Contains mostly pre-processed mean depth images as described in our paper.
+- [rgbd-correction-raw.zip](https://zenodo.org/record/6827435/files/rgbd-correction-raw.zip?download=1) ~6 GBytes | Contains the entire raw capture data, plus artificial depth maps.
 
 Depending on your needs, you might choose one over the other. As a rule of thumb use `rgbd-correction-mini.zip` if you like to reproduce our results or play around with our code basis. Otherwise go with `rgbd-correction-raw.zip`.
+
+*Note* As of 2022 the data has been re-packaged and uploaded to [zenodo](https://zenodo.org/record/6827435#.Ys7SkXZBwuV). See [issue #1](https://github.com/cheind/rgbd-correction/issues/1) for details.
 
 ### The `rgbd-correction-mini` version
 
